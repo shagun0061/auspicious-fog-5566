@@ -1,0 +1,16 @@
+ 
+.black{
+   
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-size:20px ;
+  cursor: pointer;
+}
+.gray{
+  color: #a9abaf;
+}
+
+.gray:hover{
+  color: tomato;
+  cursor:pointer  ;
+}
