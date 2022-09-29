@@ -1,12 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Landing from "./components/Landing";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Hellow
-      </header>
+      <Navbar />
+      <Landing/>
+      <Footer/>
     </div>
   );
 }
