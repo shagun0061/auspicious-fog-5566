@@ -1,0 +1,27 @@
+.vertical {
+    border-left: 6px solid blue;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 3;
+  }
+
+  .gray{
+    color: #a9abaf;
+  }
+
+  .tomato {
+    color: tomato;
+    cursor:pointer  ;
+    font-weight: 600;
+  }
+
+  .hov:hover{
+   width: 100%;
+    cursor:pointer  ;
+  }
+
+  .shadow:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
