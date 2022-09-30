@@ -152,14 +152,14 @@ function Footer() {
           <Text className={Styles.gray}>Privacy Policy</Text>
           <Spacer></Spacer>
           <Box>
-            <FaFacebookF className={Styles.gray} />
+           <a href="https://www.facebook.com/SignWithEnvoy/"> <FaFacebookF className={Styles.gray} /></a>
           </Box>
           <Box>
-            <SiTwitter className={Styles.gray} />
+          <a href="https://twitter.com/envoy/"><SiTwitter className={Styles.gray} /></a>
           </Box>
 
           <Box>
-            <BsLinkedin className={Styles.gray} />
+          <a href="https://www.linkedin.com/company/envoy-inc/"><BsLinkedin className={Styles.gray} /></a> 
           </Box>
         </HStack>
       </Box>
