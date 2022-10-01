@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../Landing.module.css";
 import img3 from "../product3.PNG";
 import img4 from "../Product4.PNG";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import {
   Image,
   Box,
@@ -22,6 +24,7 @@ import img2 from "../project2.PNG";
 function Landing() {
   return (
     <div>
+    <Navbar/>
       <Image src={img1} />
       <Image src={img2} />
       <Box w={"100%"} h={"900px"} backgroundColor="white">
@@ -446,6 +449,7 @@ function Landing() {
       </HStack>
       </Box>
  
+    <Footer/>
     </div>
   );
 }

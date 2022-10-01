@@ -510,13 +510,15 @@ const Navbar = () => {
         </Menu>
 
         // * Login   
-
+         <Link to='/login'>    
         <Button backgroundColor={'rgb(246,246,249)'} >Login</Button>
-
+        </Link> 
         // * start
 
-        <Button backgroundColor={'tomato'} color="white">Get Started</Button>
+        <Link to={'/signup'}>
 
+        <Button backgroundColor={'tomato'} color="white">Get Started</Button>
+        </Link>
       </HStack>
     </Flex>
   );
