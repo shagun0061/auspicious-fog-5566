@@ -44,8 +44,8 @@ function Signup() {
     event.preventDefault();
     if(state.email==""){
       alert("please enter email ")
-    }else if(state.password.length<8){
-      alert("Password should be atleast 8 charecter ")
+    }else if(state.password.length<6){
+      alert("Password should be atleast 5 charecter ")
     }
     axios
       .post("https://reqres.in/api/register", state)
