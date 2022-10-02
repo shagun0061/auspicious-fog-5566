@@ -42,6 +42,11 @@ function Signup() {
   
   function handelsubmit(event) {
     event.preventDefault();
+    if(state.email==""){
+      alert("please enter email ")
+    }else if(state.password.length<8){
+      alert("Password should be atleast 8 charecter ")
+    }
     axios
       .post("https://reqres.in/api/register", state)
       .then((res) => {
