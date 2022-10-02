@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Authcontext } from "../context/Authcontext";
 import {
   Box,
   Image,
@@ -21,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 
 const Navbar = () => {
+  const { logAuth, setLogAuth } = React.useContext(Authcontext);
   // ! main return
 
   return (
@@ -38,7 +40,6 @@ const Navbar = () => {
       <Spacer></Spacer>
       <HStack>
         {/* <Link to='/hiring'>We're hiring!</Link> */}
-
         // * PRODUCTS
         <Menu w="400px">
           <MenuButton
@@ -232,7 +233,6 @@ const Navbar = () => {
             </Box>
           </MenuList>
         </Menu>
-
         // * SOLUTIONS
         <Menu>
           <MenuButton
@@ -250,7 +250,7 @@ const Navbar = () => {
           <MenuList w={"350px"} h={"400px"} p="0px 20px">
             {/* 1 */}
 
-            <MenuItem display={"flex"} gap="10px" mt={'10px'}>
+            <MenuItem display={"flex"} gap="10px" mt={"10px"}>
               <Image
                 w={"25px"}
                 h={"25px"}
@@ -326,7 +326,6 @@ const Navbar = () => {
             </MenuItem>
           </MenuList>
         </Menu>
-
         // * RESOURCES
         <Menu>
           <MenuButton
@@ -344,7 +343,7 @@ const Navbar = () => {
           <MenuList w={"350px"} h={"400px"} p="0px 20px">
             {/* 1 */}
 
-            <MenuItem display={"flex"} gap="10px" mt={'10px'}>
+            <MenuItem display={"flex"} gap="10px" mt={"10px"}>
               <Image
                 w={"25px"}
                 h={"25px"}
@@ -442,10 +441,8 @@ const Navbar = () => {
             </MenuItem>
           </MenuList>
         </Menu>
-
         // * Demo
         <Button>Demo</Button>
-
         // * Pricing
         <Menu>
           <MenuButton
@@ -460,10 +457,10 @@ const Navbar = () => {
           >
             Pricing
           </MenuButton>
-          <MenuList w={"300px"} h={"250px"} p="0px 20px"  >
+          <MenuList w={"300px"} h={"250px"} p="0px 20px">
             {/* 1 */}
 
-            <MenuItem display={"flex"} gap="10px" mt={'10px'}>
+            <MenuItem display={"flex"} gap="10px" mt={"10px"}>
               <Image
                 w={"25px"}
                 h={"25px"}
@@ -491,7 +488,10 @@ const Navbar = () => {
                 h={"25px"}
                 src="https://envoy.com/images/icons/24px/red/phone.svg"
               />
-              <Text fontSize={20}>Call sales: <span  style={{color:"tomato"}}>(877) 652-2808 </span></Text>
+              <Text fontSize={20}>
+                Call sales:{" "}
+                <span style={{ color: "tomato" }}>(877) 652-2808 </span>
+              </Text>
             </MenuItem>
 
             {/* 4 */}
@@ -504,25 +504,26 @@ const Navbar = () => {
               />
               <Text fontSize={20}> Contact us </Text>
             </MenuItem>
-
-             
           </MenuList>
         </Menu>
-
-        // * Login   
-         <Link to='/login'>    
-        <Button backgroundColor={'rgb(246,246,249)'} >Login</Button>
-        </Link> 
-        // * start
-
-        <Link to={'/signup'}>
-
-        <Button backgroundColor={'tomato'} color="white">Get Started</Button>
+        // * Login
+        <Link to="/login">
+          <Button backgroundColor={"rgb(246,246,249)"}>Login</Button>
         </Link>
+        // * start
+         {logAuth  ? <Link to={"/dashboard"}>
+          <Button backgroundColor={"tomato"} color="white">
+            Go to Dashboard
+          </Button>
+        </Link>:
+        <Link to={"/signup"}>
+          <Button backgroundColor={"tomato"} color="white">
+            Get Started
+          </Button>
+        </Link>}
       </HStack>
     </Flex>
   );
 };
 
 export default Navbar;
- 

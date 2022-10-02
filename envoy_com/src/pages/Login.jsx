@@ -17,11 +17,12 @@ import { Navigate } from "react-router-dom";
 // main Function
 
 export const Login = () => {
+
   const [inp, setInp] = useState({
     email: "",
     password: "",
   });
-  const { logAuth, setLogAuth } = React.useContext(Authcontext);
+  const { logAuth, setLogAuth ,regAuth} = React.useContext(Authcontext);
 
   // getdata function
 
@@ -40,10 +41,11 @@ export const Login = () => {
   // handelClick
 
   function handelClick() {
-    axios.get("https://reqres.in/api/login", inp).then((res) => {
-      alert(res.status + "  Login successful");
+    axios.post("https://reqres.in/api/login",inp).then((res) => {
+      console.log(res)
+      alert(res.data.token + "  Login successful");
       if (res.status == 200) {
-        console.log(res)
+        
         setLogAuth(true);
       }
     });
@@ -53,6 +55,12 @@ export const Login = () => {
     return  <Navigate to='/'></Navigate>
    }
    
+   if(!regAuth){
+    alert("Please signup First");
+    return(
+    <Navigate to='/signup'></Navigate>
+    )
+   }
   return (
     <Box bg={"rgb(246,246,249)"} h={"100vh"} border={"1px"} w={"100%"}>
       <Box
