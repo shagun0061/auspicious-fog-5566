@@ -12,7 +12,7 @@ import {
   Image,
   Flex,
 } from "@chakra-ui/react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 // * Main Function
 
@@ -66,7 +66,7 @@ function Signup() {
   }
   return (
     <Box bg={"rgb(246,246,249)"}>
-      <Image src="https://signup.envoy.com/assets/images/logo-new.svg" />
+      <Link to='/'>  <Image src="https://signup.envoy.com/assets/images/logo-new.svg" /></Link>
       <Box display={"flex"} justifyContent={"center"}>
         <Box
           maxW={"sm"}
